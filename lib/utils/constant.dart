@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 
 class Constants {
@@ -5,7 +6,7 @@ class Constants {
   static int latestVersionNumber = 1000;
   static int currentVersionNumber = 1000;
   static double currentVersion = 1.0;
-
+  static AdaptiveThemeMode currentTheme = AdaptiveThemeMode.dark;
 
   static const sidebarColor = Color(0xFF535252);
   static const backgroundStartColor = Color(0xFF535252);

@@ -19,7 +19,7 @@ import 'core/service/service_locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final savedThemeMode = await AdaptiveTheme.getThemeMode();
+  Constants.currentTheme = (await AdaptiveTheme.getThemeMode())!;
   await EasyLocalization.ensureInitialized();
 
   await Preference.load();
@@ -45,5 +45,5 @@ void main() async {
       supportedLocales: const [ARABIC_LOCAL, ENGLISH_LOCAL],
       path: ASSET_PATH_LOCALISATIONS,
       fallbackLocale: ARABIC_LOCAL,
-      child: MyApp(savedThemeMode)));
+      child: MyApp(Constants.currentTheme)));
 }
