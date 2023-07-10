@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:egypt_future_chat_desktop/presentation/linkedDevices/ui/link_device_screen.dart';
-import 'package:egypt_future_chat_desktop/presentation/startScreen/qr_screen.dart';
+import 'package:egypt_future_chat_desktop/presentation/startScreen/ui/qr_screen.dart';
 import 'package:egypt_future_chat_desktop/presentation/startScreen/ui/start_screen.dart';
 import 'package:flutter/material.dart';
 

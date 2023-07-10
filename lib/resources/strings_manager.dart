@@ -20,6 +20,7 @@ class AppStrings{
   static String step1 = "step1";
   static String step2 = "step2";
   static String step3 = "step3";
+  static String loadingChats = "loadingChats";
 
   //login
   static String userName = "userName";

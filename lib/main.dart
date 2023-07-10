@@ -33,6 +33,7 @@ void main() async {
     WindowManager.instance.setTitle(savedLanguage == LanguageType.ARABIC.getValue() ? "جهاز مستقبل مصر" : "Egypt's Future Authority");
   }
 
+
   Bloc.observer = MyBlocObserver();
   ServiceLocator().setup();
 
@@ -41,8 +42,8 @@ void main() async {
   Constants.currentVersionNumber = int.parse(currentVersion);
 
   runApp(EasyLocalization(
-      supportedLocales: const [ENGLISH_LOCAL, ENGLISH_LOCAL],
+      supportedLocales: const [ARABIC_LOCAL, ENGLISH_LOCAL],
       path: ASSET_PATH_LOCALISATIONS,
-      fallbackLocale: ENGLISH_LOCAL,
+      fallbackLocale: ARABIC_LOCAL,
       child: MyApp(savedThemeMode)));
 }

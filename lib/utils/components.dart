@@ -203,6 +203,61 @@ class ReusableComponents {
   }
 }
 
+class BlurryProgressDialog extends StatelessWidget {
+  final String title;
+  TextStyle? titleStyle;
+  double? titleMinSize, titleMaxSize, blurValue;
+  int? titleMaxLines;
+
+  BlurryProgressDialog(
+      {Key? key,
+        required this.title,
+        this.titleStyle,
+        this.titleMaxLines,
+        this.titleMaxSize,
+        this.titleMinSize,
+        this.blurValue})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Directionality(
+      textDirection: AppConstants.isArabic() ? ui.TextDirection.rtl : ui.TextDirection.ltr,
+      child: BackdropFilter(
+          filter: ui.ImageFilter.blur(
+              sigmaX: blurValue ?? 4, sigmaY: blurValue ?? 4),
+          child: AlertDialog(
+            backgroundColor: Theme.of(context).backgroundColor,
+            scrollable: true,
+            content: Column(
+              children: [
+                CircularProgressIndicator(
+                  color: Theme.of(context).primaryColorDark,
+                  strokeWidth: AppSize.s0_8,
+                ),
+                const SizedBox(
+                  height: AppSize.s36,
+                ),
+                AutoSizeText(
+                  title,
+                  style: titleStyle ??
+                      TextStyle(
+                          color: Theme.of(context).primaryColorDark,
+                          fontSize: AppSize.s12),
+                  minFontSize: titleMinSize ?? AppSize.s12,
+                  maxFontSize: titleMaxSize ?? AppSize.s14,
+                  maxLines: titleMaxLines ?? AppSize.s2.toInt(),
+                ),
+                const SizedBox(
+                  height: AppSize.s8,
+                ),
+              ],
+            ),
+          )),
+    );
+  }
+}
+
 class TextFieldDialog extends StatelessWidget {
   Widget content;
   TextStyle? titleTextStyle;
