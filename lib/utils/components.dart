@@ -211,18 +211,19 @@ class BlurryProgressDialog extends StatelessWidget {
 
   BlurryProgressDialog(
       {Key? key,
-        required this.title,
-        this.titleStyle,
-        this.titleMaxLines,
-        this.titleMaxSize,
-        this.titleMinSize,
-        this.blurValue})
+      required this.title,
+      this.titleStyle,
+      this.titleMaxLines,
+      this.titleMaxSize,
+      this.titleMinSize,
+      this.blurValue})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: AppConstants.isArabic() ? ui.TextDirection.rtl : ui.TextDirection.ltr,
+      textDirection:
+          AppConstants.isArabic() ? ui.TextDirection.rtl : ui.TextDirection.ltr,
       child: BackdropFilter(
           filter: ui.ImageFilter.blur(
               sigmaX: blurValue ?? 4, sigmaY: blurValue ?? 4),
@@ -352,3 +353,5 @@ class TextFieldDialog extends StatelessWidget {
     );
   }
 }
+
+

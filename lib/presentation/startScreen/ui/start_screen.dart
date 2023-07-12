@@ -58,7 +58,7 @@ class StartScreen extends StatelessWidget {
                           FontConstants.family,
                           fontSize: AppSize.s14))
                       .ripple(()async {
-                      AppConstants.navigate(context, RoutesManager.qrRoute, null);
+                      AppConstants.navigate(context, RoutesManager.chatRoute, null);
                     /*final savedThemeMode = await AdaptiveTheme.getThemeMode();
                     if(savedThemeMode == AdaptiveThemeMode.light){
                       AdaptiveTheme.of(context).setDark();

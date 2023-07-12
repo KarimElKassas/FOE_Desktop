@@ -24,5 +24,8 @@
   "userPasswordRequired" : "يجب ادخال كلمة المرور",
   "loginWrongData" : "بيانات الدخول خاطئة",
   "login" : "تسجيل الدخول",
-  "exit" : "خروج"
+  "exit" : "خروج",
+  "chatsTitle": "محادثة",
+  "searchText": "ابحث أو ابدأ محادثة جديدة",
+  "chooseChat": "اختر محادثة لعرض الرسائل"
 }

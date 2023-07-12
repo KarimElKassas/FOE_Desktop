@@ -24,5 +24,8 @@
   "userPasswordRequired" : "User Password Required",
   "loginWrongData" : "Wrong Login Data",
   "login" : "Login",
-  "exit" : "Exit"
+  "exit" : "Exit",
+  "chatsTitle": "Chats",
+  "searchText": "Search or start a new chat",
+  "chooseChat": "Select a chat to view the messages"
 }

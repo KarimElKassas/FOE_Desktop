@@ -30,4 +30,9 @@ class AppStrings{
   static String loginWrongData = "loginWrongData";
   static String login = "login";
   static String exit = "exit";
+
+  //Chat Screen
+  static String chatsTitle = "chatsTitle";
+  static String searchText = "searchText";
+  static String chooseChat = "chooseChat";
 }

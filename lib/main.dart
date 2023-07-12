@@ -19,7 +19,7 @@ import 'core/service/service_locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Constants.currentTheme = (await AdaptiveTheme.getThemeMode())!;
+  Constants.currentTheme = await AdaptiveTheme.getThemeMode();
   await EasyLocalization.ensureInitialized();
 
   await Preference.load();
