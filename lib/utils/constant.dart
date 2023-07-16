@@ -7,6 +7,7 @@ class Constants {
   static int currentVersionNumber = 1000;
   static double currentVersion = 1.0;
   static AdaptiveThemeMode? currentTheme = AdaptiveThemeMode.dark;
+  static String? currentLocale = 'ar';
 
   static const sidebarColor = Color(0xFF535252);
   static const backgroundStartColor = Color(0xFF535252);

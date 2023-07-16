@@ -52,6 +52,12 @@ dependencies:
   qr_flutter: ^4.1.0
   mobile_scanner: ^3.3.0
   signalr_core: ^1.1.1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  hive_generator: ^2.0.0
+  easy_sidemenu: ^0.4.2
+  sidebarx: ^0.16.0
+  line_icons: ^2.0.3
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -66,7 +72,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-
+  build_runner:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

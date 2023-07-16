@@ -32,7 +32,12 @@ class AppStrings{
   static String exit = "exit";
 
   //Chat Screen
+  static String chats = "chats";
   static String chatsTitle = "chatsTitle";
   static String searchText = "searchText";
   static String chooseChat = "chooseChat";
+  static String typeMessage = "typeMessage";
+  static String archive = "archive";
+  static String settings = "settings";
+  static String profile = "profile";
 }

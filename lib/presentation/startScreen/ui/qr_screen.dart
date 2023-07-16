@@ -22,7 +22,7 @@ class QrScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-        create: (context) => sl<LoginCubit>()..initHub(),
+        create: (context) => sl<LoginCubit>()..initHub()..initCaching(),
         child: BlocConsumer<LoginCubit, LoginStates>(
           listener: (context, state) {
             if(state is LoginLoadingChatsState){

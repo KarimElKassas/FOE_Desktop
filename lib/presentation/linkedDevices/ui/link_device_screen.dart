@@ -23,7 +23,9 @@ class LinkDeviceScreen extends StatelessWidget {
       body: Center(
         child: MobileScanner(
           // fit: BoxFit.contain,
-          controller: controller,
+          controller: MobileScannerController(
+            detectionSpeed: DetectionSpeed.noDuplicates
+          ),
           onDetect: (capture) async {
             if(detectCount == 0){
               print("DETECTED : \n");

@@ -15,7 +15,7 @@ class ThemeManager{
         primaryColorLight: ColorManager.white, // == dark second in dark mode
         backgroundColor: ColorManager.white,
         disabledColor: ColorManager.grey1,
-        splashColor: ColorManager.veryLightGreen,
+        splashColor: ColorManager.grey2,
         unselectedWidgetColor: ColorManager.lightGreen,
         //cardView theme
         cardTheme: CardTheme(
@@ -100,7 +100,7 @@ class ThemeManager{
         primaryColorLight: ColorManager.darkSecondColor, // == very light green in light mode
         backgroundColor: ColorManager.darkColor,
         disabledColor: ColorManager.white54,
-        splashColor: ColorManager.veryLightGreen,
+        splashColor: ColorManager.grey3,
         unselectedWidgetColor: ColorManager.white54,
         //cardView theme
         cardTheme: CardTheme(

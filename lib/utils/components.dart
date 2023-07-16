@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:egypt_future_chat_desktop/resources/language_manager.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 import 'package:auto_size_text/auto_size_text.dart';
@@ -8,6 +9,7 @@ import '../resources/constants_manager.dart';
 import '../resources/font_manager.dart';
 import '../resources/strings_manager.dart';
 import '../resources/values_manager.dart';
+import 'constant.dart';
 
 class ReusableComponents {
   static Widget registerTextField(
@@ -21,6 +23,8 @@ class ReusableComponents {
       Widget? prefixIcon,
       bool? isPassword,
       Color? background,
+      Color? borderColor,
+      BorderStyle? borderStyle,
       double? borderRadius,
       int? maxLines,
       TextEditingController? controller}) {
@@ -29,31 +33,29 @@ class ReusableComponents {
       cursorWidth: AppSize.s1,
       maxLines: maxLines ?? 1,
       cursorColor: Theme.of(context).primaryColorDark.withOpacity(AppSize.s0_8),
-      textDirection:
-          AppConstants.isArabic() ? ui.TextDirection.rtl : ui.TextDirection.ltr,
+      textDirection: AppConstants.isArabic() ? ui.TextDirection.rtl : ui.TextDirection.ltr,
       keyboardType: textInputType,
       textInputAction: textInputAction,
       obscureText: isPassword ?? false,
       textAlignVertical: TextAlignVertical.center,
-      textAlign: TextAlign.center,
+      textAlign: Constants.currentLocale == LanguageType.ARABIC.getValue() ? TextAlign.start : TextAlign.end,
       validator: (value) => validate(value),
       decoration: InputDecoration(
           filled: true,
           fillColor: background ?? ColorManager.white.withOpacity(AppSize.s0_8),
           enabledBorder: OutlineInputBorder(
-            borderRadius:
-                BorderRadius.all(Radius.circular(borderRadius ?? AppSize.s8)),
+            borderRadius: BorderRadius.all(Radius.circular(borderRadius ?? AppSize.s8)),
             borderSide: BorderSide(
                 width: AppSize.s0_2,
-                style: BorderStyle.solid,
-                color: Theme.of(context).primaryColorDark),
+                style: borderStyle ?? BorderStyle.solid,
+                color: borderColor ?? Theme.of(context).primaryColorDark),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius:
                 BorderRadius.all(Radius.circular(borderRadius ?? AppSize.s8)),
             borderSide: BorderSide(
               width: AppSize.s0_2,
-              style: BorderStyle.solid,
+              style: borderStyle ?? BorderStyle.solid,
               color: ColorManager.error,
             ),
           ),
@@ -62,7 +64,7 @@ class ReusableComponents {
                 BorderRadius.all(Radius.circular(borderRadius ?? AppSize.s8)),
             borderSide: BorderSide(
                 width: AppSize.s0_2,
-                style: BorderStyle.solid,
+                style: borderStyle ?? BorderStyle.solid,
                 color: ColorManager.error),
           ),
           focusedBorder: OutlineInputBorder(
@@ -70,7 +72,7 @@ class ReusableComponents {
                 BorderRadius.all(Radius.circular(borderRadius ?? AppSize.s8)),
             borderSide: BorderSide(
                 width: AppSize.s0_2,
-                style: BorderStyle.solid,
+                style: borderStyle ?? BorderStyle.solid,
                 color: Theme.of(context).primaryColorDark),
           ),
           disabledBorder: OutlineInputBorder(
@@ -78,7 +80,7 @@ class ReusableComponents {
                 BorderRadius.all(Radius.circular(borderRadius ?? AppSize.s8)),
             borderSide: BorderSide(
                 width: AppSize.s0_2,
-                style: BorderStyle.solid,
+                style: borderStyle ?? BorderStyle.solid,
                 color: Theme.of(context).primaryColorDark),
           ),
           floatingLabelStyle:
@@ -102,20 +104,21 @@ class ReusableComponents {
               ? ui.TextDirection.rtl
               : ui.TextDirection.ltr,
           border: OutlineInputBorder(
-              borderSide: const BorderSide(
+              borderSide: BorderSide(
                 width: AppSize.s0_2,
+                color: borderColor ?? Theme.of(context).primaryColorDark,
                 style: BorderStyle.none,
               ),
               borderRadius: BorderRadius.all(
                   Radius.circular(borderRadius ?? AppSize.s8))),
           prefixIcon: prefixIcon,
+          contentPadding: const EdgeInsets.symmetric(horizontal: AppSize.s12),
           suffixIcon: suffixIcon,
           errorMaxLines: 2),
       style: textStyle ??
           TextStyle(
-              fontSize: AppSize.s16,
-              color:
-                  Theme.of(context).primaryColorDark.withOpacity(AppSize.s0_8),
+              fontSize: AppSize.s14,
+              color: Theme.of(context).primaryColorDark.withOpacity(AppSize.s0_8),
               fontFamily: FontConstants.family,
               fontWeight: FontWeightManager.bold),
     );

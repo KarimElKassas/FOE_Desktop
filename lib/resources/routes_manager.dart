@@ -27,7 +27,7 @@ class RouteGenerator{
       case RoutesManager.linkDeviceRoute :
         return MaterialPageRoute(builder: (_) => LinkDeviceScreen());
       case RoutesManager.chatRoute :
-        return MaterialPageRoute(builder: (_) => const ChatScreen());
+        return MaterialPageRoute(builder: (_) => ChatScreen());
       case RoutesManager.homeRoute :
         return unDefinedRoute();
       default:

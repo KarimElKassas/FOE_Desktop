@@ -1,3 +1,4 @@
+import 'package:egypt_future_chat_desktop/utils/constant.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/prefs_helper.dart';
@@ -84,9 +85,11 @@ class AppConstants {
     if (currentLang == LanguageType.ARABIC.getValue()) {
       // set english
       Preference.prefs.setString(prefsKeyLang, "English");
+      Constants.currentLocale = LanguageType.ENGLISH.getValue();
     } else {
       // set arabic
       Preference.prefs.setString(prefsKeyLang, "Arabic");
+      Constants.currentLocale = LanguageType.ARABIC.getValue();
     }
   }
 

@@ -27,5 +27,10 @@
   "exit" : "Exit",
   "chatsTitle": "Chats",
   "searchText": "Search or start a new chat",
-  "chooseChat": "Select a chat to view the messages"
+  "chooseChat": "Select a chat to view the messages",
+  "typeMessage": "Type a message",
+  "chats": "Chats",
+  "archive": "Archive Chats",
+  "settings": "Settings",
+  "profile": "Profile"
 }

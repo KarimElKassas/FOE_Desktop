@@ -14,7 +14,7 @@ class ColorManager {
 
   static Color grey1 = const Color(0xff707070);
   static Color grey2 = const Color(0xffa5a3a3);
-  static Color grey3 = const Color(0xffEFF1F3);
+  static Color grey3 = const Color(0xff4D4D4D);
   static Color white = const Color(0xffffffff);
   static Color veryLightWhite = const Color(0x1Affffff);
   static Color error = const Color(0xffe61f34);
@@ -26,8 +26,8 @@ class ColorManager {
   static Color darkGreen = const Color(0xff013d17); // icons color
 
   //Dark Colors
-  static Color darkColor = const Color(0xff00302a);
-  static Color darkSecondColor = const Color(0xff202020);
+  static Color darkColor = const Color(0xff202020);
+  static Color darkSecondColor = const Color(0xff272727);
   static Color white54 = Colors.white54; // icons color
 
 }
