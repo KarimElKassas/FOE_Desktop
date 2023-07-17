@@ -4,7 +4,6 @@ import 'package:egypt_future_chat_desktop/presentation/chatScreen/bloc/home_stat
 import 'package:egypt_future_chat_desktop/presentation/chatScreen/components/chat_list_widget.dart';
 import 'package:egypt_future_chat_desktop/presentation/chatScreen/components/side_bar.dart';
 import 'package:egypt_future_chat_desktop/presentation/chatScreen/components/tool_button.dart';
-import 'package:egypt_future_chat_desktop/presentation/chatScreen/dummyValues/user.dart';
 import 'package:egypt_future_chat_desktop/resources/strings_manager.dart';
 import 'package:egypt_future_chat_desktop/resources/values_manager.dart';
 import 'package:egypt_future_chat_desktop/utils/components.dart';
@@ -12,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:line_icons/line_icon.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../../../core/service/service_locator.dart';
