@@ -1,4 +1,5 @@
 import 'package:egypt_future_chat_desktop/presentation/chatScreen/bloc/home_cubit.dart';
+import 'package:egypt_future_chat_desktop/presentation/chatScreen/bloc/setting_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../presentation/startScreen/bloc/login_cubit.dart';
@@ -10,6 +11,7 @@ class ServiceLocator {
     /// Blocs
     sl.registerFactory(() => LoginCubit());
     sl.registerFactory(() => HomeCubit());
+    sl.registerFactory(() => SettingCubit());
     //sl.registerFactory(() => ArchiveHomeCubit(sl(), sl(), sl(),sl(), sl(), sl(), sl()));
 
     /// Remote Data Source
