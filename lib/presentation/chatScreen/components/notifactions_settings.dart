@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:egypt_future_chat_desktop/resources/values_manager.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 
 class NotificationSettings extends StatelessWidget {
   const NotificationSettings({Key? key}) : super(key: key);
