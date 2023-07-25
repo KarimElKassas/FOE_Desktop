@@ -40,4 +40,32 @@ class AppStrings{
   static String archive = "archive";
   static String settings = "settings";
   static String profile = "profile";
+  static String general = "general";
+  static String account = "account";
+  static String notifications = "notifications";
+  static String personalization = "personalization";
+  static String shortcuts = "shortcuts";
+
+
+  // Settings Dialog
+  static String startFOEChat = "startFOEChat";
+  static String typing = "typing";
+  static String language = "language";
+  static String typingText = "typingText";
+  static String logout = "logout";
+  static String privacyText = "privacyText";
+  static String lastSeen = "lastSeen";
+  static String profilePicture = "profilePicture";
+  static String noOne = "noOne";
+  static String everyone = "everyone";
+  static String notificationText = "notificationText";
+  static String theme = "theme";
+  static String light = "light";
+  static String dark = "dark";
+  static String appName = "appName";
+  static String contactUs = "contactUs";
+  static String phoneNumber = "phoneNumber";
+  static String english = "english";
+  static String arabic = "arabic";
+
 }

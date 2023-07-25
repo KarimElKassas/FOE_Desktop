@@ -45,7 +45,7 @@ class SettingsDialog extends StatelessWidget {
                       controller: cubit.chatListPageController,
                       children:  <Widget>[
                             GeneralSettings(),
-                            const AccountSettings(),
+                            AccountSettings(),
                             const NotificationSettings(),
                              personalizationSetting(), /// personalization screen
                             const ShortCutsSettings(),

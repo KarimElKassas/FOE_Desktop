@@ -1,33 +1,51 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:egypt_future_chat_desktop/presentation/chatScreen/components/theme_dropdown_menu.dart';
+import 'package:egypt_future_chat_desktop/resources/font_manager.dart';
 import 'package:egypt_future_chat_desktop/resources/values_manager.dart';
 import 'package:flutter/material.dart';
+
+import '../../../resources/strings_manager.dart';
 
 class personalizationSetting extends StatelessWidget {
   personalizationSetting({Key? key}) : super(key: key);
 
-  /*List<DropdownMenuItem<String>> menuItems = [
-    DropdownMenuItem(child: Text("dark"), value: "Dark"),
-    DropdownMenuItem(child: Text("light"), value: "light"),
-  ];*/
-
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSize.s30),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: AppSize.s30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(top: AppSize.s30),
+            padding:
+                const EdgeInsets.only(top: AppSize.s40, bottom: AppSize.s20),
             child: Text(
-              'Personalization',
-              style: TextStyle(fontSize: AppSize.s24, color: Colors.white),
+              AppStrings.personalization.tr(),
+              style: TextStyle(
+                fontSize: AppSize.s24,
+                color: Theme.of(context).primaryColorDark,
+                fontFamily: FontConstants.family
+              ),
             ),
           ),
           Text(
-            'theme',
-            style: TextStyle(color: Colors.white54, fontSize: AppSize.s20),
+            AppStrings.theme.tr(),
+            style: TextStyle(
+              color: Theme.of(context).primaryColorDark,
+              fontSize: AppSize.s18,
+              fontFamily: FontConstants.family,
+            ),
           ),
-          //DropdownButton(items: menuItems, onChanged: () {})
+          const SizedBox(height: AppSize.s10),
+          const ThemeDropdownMenu(),
+          const SizedBox(height: AppSize.s15,),
+          const Divider(
+            height: AppSize.s5,
+            thickness: AppSize.s1,
+            indent: AppSize.s10,
+            endIndent: 0,
+            color: Colors.grey,
+          ),
         ],
       ),
     );

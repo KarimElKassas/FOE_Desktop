@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:egypt_future_chat_desktop/resources/custom_sidebar/sidebar_base.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -42,7 +43,7 @@ class SettingSideBar extends StatelessWidget {
           items: [
             SidebarXItem(
                 iconWidget: Tooltip(
-                    message: 'General',
+                    message: AppStrings.general.tr(),
                     padding: const EdgeInsets.all(AppSize.s6),
                     decoration: BoxDecoration(
                         color: Theme.of(context).primaryColorLight,
@@ -54,13 +55,13 @@ class SettingSideBar extends StatelessWidget {
                       color: Theme.of(context).primaryColorDark,
                       size: AppSize.s18,
                     )),
-                label: 'General',
+                label: AppStrings.general.tr(),
                 onTap: () {
                    cubit.changeListPage(0);
                 }),
             SidebarXItem(
                 iconWidget: Tooltip(
-                    message: 'Account',
+                    message: AppStrings.account.tr(),
                     padding: const EdgeInsets.all(AppSize.s6),
                     decoration: BoxDecoration(
                         color: Theme.of(context).primaryColorLight,
@@ -72,13 +73,13 @@ class SettingSideBar extends StatelessWidget {
                       color: Theme.of(context).primaryColorDark,
                       size: AppSize.s18,
                     )),
-                label: 'account',
+                label: AppStrings.account.tr(),
                 onTap: () {
                    cubit.changeListPage(1);
                 }),
             SidebarXItem(
                 iconWidget: Tooltip(
-                    message: 'Notifications',
+                    message: AppStrings.notifications.tr(),
                     padding: const EdgeInsets.all(AppSize.s6),
                     decoration: BoxDecoration(
                         color: Theme.of(context).primaryColorLight,
@@ -90,13 +91,13 @@ class SettingSideBar extends StatelessWidget {
                       color: Theme.of(context).primaryColorDark,
                       size: AppSize.s18,
                     )),
-                label: 'Notifications',
+                label: AppStrings.notifications.tr(),
                 onTap: () {
                    cubit.changeListPage(2);
                 }),
             SidebarXItem(
                 iconWidget: Tooltip(
-                    message: 'Personalization',
+                    message: AppStrings.personalization.tr(),
                     padding: const EdgeInsets.all(AppSize.s6),
                     decoration: BoxDecoration(
                         color: Theme.of(context).primaryColorLight,
@@ -108,13 +109,13 @@ class SettingSideBar extends StatelessWidget {
                       color: Theme.of(context).primaryColorDark,
                       size: AppSize.s18,
                     )),
-                label: 'Personalization',
+                label: AppStrings.personalization.tr(),
                 onTap: () {
                    cubit.changeListPage(3);
                 }),
             SidebarXItem(
                 iconWidget: Tooltip(
-                    message: 'Shortcuts',
+                    message: AppStrings.shortcuts.tr(),
                     padding: const EdgeInsets.all(AppSize.s6),
                     decoration: BoxDecoration(
                         color: Theme.of(context).primaryColorLight,
@@ -126,13 +127,13 @@ class SettingSideBar extends StatelessWidget {
                       color: Theme.of(context).primaryColorDark,
                       size: AppSize.s18,
                     )),
-                label: 'Shortcuts',
+                label: AppStrings.shortcuts.tr(),
                 onTap: () {
                    cubit.changeListPage(4);
                 }),
             SidebarXItem(
                 iconWidget: Tooltip(
-                    message: 'Help',
+                    message: AppStrings.help.tr(),
                     padding: const EdgeInsets.all(AppSize.s6),
                     decoration: BoxDecoration(
                         color: Theme.of(context).primaryColorLight,
@@ -144,7 +145,7 @@ class SettingSideBar extends StatelessWidget {
                       color: Theme.of(context).primaryColorDark,
                       size: AppSize.s18,
                     )),
-                label: 'Help',
+                label: AppStrings.help.tr(),
                 onTap: () {
                    cubit.changeListPage(5);
                 }),
@@ -152,7 +153,7 @@ class SettingSideBar extends StatelessWidget {
           footerItems: [
             SidebarXItem(
                 iconWidget: Tooltip(
-                    message: 'Profile',
+                    message: AppStrings.profile.tr(),
                     padding: const EdgeInsets.all(AppSize.s6),
                     decoration: BoxDecoration(
                         color: Theme.of(context).primaryColorLight,
@@ -164,7 +165,7 @@ class SettingSideBar extends StatelessWidget {
                       color: Theme.of(context).primaryColorDark,
                       size: AppSize.s18,
                     )),
-                label: 'Profile',
+                label: AppStrings.profile.tr(),
                 onTap: () {
                   cubit.changeListPage(6);
                 })

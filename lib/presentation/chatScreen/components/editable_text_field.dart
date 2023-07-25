@@ -1,3 +1,4 @@
+import 'package:egypt_future_chat_desktop/resources/font_manager.dart';
 import 'package:egypt_future_chat_desktop/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -48,9 +49,15 @@ class _TextSwitcherWidgetState extends State<TextSwitcherWidget> {
                       widget.initialText = value;
                     });
                   },
-                  decoration: InputDecoration(
-                    focusColor: Colors.white,
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColorDark,
                   ),
+                  decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Theme.of(context).primaryColorDark),
+                        borderRadius: BorderRadius.circular(AppSize.s10)
+                  )),
                 )
               : GestureDetector(
                   onTap: () {
@@ -60,13 +67,20 @@ class _TextSwitcherWidgetState extends State<TextSwitcherWidget> {
                   },
                   child: Text(
                     widget.initialText!,
-                    style: const TextStyle(fontSize: AppSize.s18, color: Colors.white),
+                    style: TextStyle(
+                      fontSize: AppSize.s20,
+                      color: Theme.of(context).primaryColorDark,
+                      fontFamily: FontConstants.family,
+                    ),
                   ),
                 ),
         ),
         // IconButton to toggle editing state
         IconButton(
-          icon: Icon(isEditing ? Icons.done : Icons.edit),
+          icon: Icon(
+            isEditing ? Icons.done : Icons.edit,
+            color: Theme.of(context).primaryColorDark,
+          ),
           onPressed: () {
             setState(() {
               isEditing = !isEditing;
