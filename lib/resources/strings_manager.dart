@@ -35,6 +35,9 @@ class AppStrings{
   static String chats = "chats";
   static String chatsTitle = "chatsTitle";
   static String searchText = "searchText";
+  static String newChat = "newChat";
+  static String newGroup = "newGroup";
+  static String allContacts = "allContacts";
   static String chooseChat = "chooseChat";
   static String typeMessage = "typeMessage";
   static String archive = "archive";

@@ -4,6 +4,7 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   desktop_window
+  file_selector_windows
   screen_retriever
   window_manager
 )

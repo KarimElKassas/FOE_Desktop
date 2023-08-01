@@ -10,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import '../../../core/service/service_locator.dart';
 import '../../../resources/font_manager.dart';
+import '../../../resources/routes_manager.dart';
 import '../../../resources/strings_manager.dart';
 import '../../../utils/components.dart';
 import 'dart:ui' as ui;
@@ -28,9 +29,11 @@ class QrScreen extends StatelessWidget {
             if(state is LoginLoadingChatsState){
               _scaleDialog(context, loadingDialog(context));
             }
+            if(state is LoginGetChatsSuccessState){
+              AppConstants.finish(context, RoutesManager.chatRoute);
+            }
           },
           builder: (context, state) {
-            var cubit = LoginCubit.get(context);
             return Scaffold(
               backgroundColor: Theme.of(context).primaryColorLight,
               body: Center(

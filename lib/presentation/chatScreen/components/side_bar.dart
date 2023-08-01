@@ -4,6 +4,8 @@ import 'package:egypt_future_chat_desktop/presentation/chatScreen/components/set
 import 'package:egypt_future_chat_desktop/resources/asset_manager.dart';
 import 'package:egypt_future_chat_desktop/resources/color_manager.dart';
 import 'package:egypt_future_chat_desktop/resources/font_manager.dart';
+import 'package:egypt_future_chat_desktop/resources/language_manager.dart';
+import 'package:egypt_future_chat_desktop/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sidebarx/sidebarx.dart';
@@ -64,7 +66,7 @@ class ChatSideBar extends StatelessWidget {
                 onTap: () {
                   _scaleDialog(
                       context,
-                      const Align(alignment: Alignment.bottomRight, child: SettingsDialog()));
+                      Align(alignment: Constants.currentLocale == LanguageType.ARABIC.getValue() ? Alignment.bottomRight : Alignment.bottomLeft, child: SettingsDialog()));
                 }),
             SidebarXItem(
                 iconWidget: Tooltip(message: AppStrings.profile.tr(), padding: const EdgeInsets.all(AppSize.s6),decoration: BoxDecoration(color: Theme.of(context).primaryColorLight ,borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8))),waitDuration: const Duration(milliseconds: 300),textStyle: TextStyle(fontFamily: FontConstants.family, color: Theme.of(context).primaryColorDark, fontWeight: FontWeightManager.bold, fontSize: FontSize.s14),

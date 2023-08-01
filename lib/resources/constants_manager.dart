@@ -1,5 +1,10 @@
+import 'dart:io';
+
+import 'package:egypt_future_chat_desktop/resources/endpoints.dart';
 import 'package:egypt_future_chat_desktop/utils/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:http/io_client.dart';
+import 'package:signalr_core/signalr_core.dart';
 
 import '../utils/prefs_helper.dart';
 import 'language_manager.dart';
@@ -8,6 +13,7 @@ class AppConstants {
   static const int toastTimeIOS = 3; //in seconds
   static const String prefsKeyLang = "PREFS_KEY_LANG";
   static const String prefsKeyTheme = "PREFS_KEY_THEME";
+  static ValueNotifier<bool> boxKeyNotifier = ValueNotifier(false);
 
   /// The default borderRadius
   static const double borderRadius = 8.0;
@@ -51,6 +57,45 @@ class AppConstants {
     }else{
       return LanguageType.ARABIC.getValue();
     }
+  }
+  static HubConnection? connection;
+  static void initHub()async{
+    print("HELLO INIT HUB");
+    const url = EndPoints.hubUrl2;
+    if(AppConstants.connection?.state == HubConnectionState.disconnected || AppConstants.connection?.connectionId == null) {
+      AppConstants.connection = HubConnectionBuilder().withUrl(url,
+          HttpConnectionOptions(
+            accessTokenFactory: getMyToken,
+            client: IOClient(HttpClient()..badCertificateCallback = (x, y, z) => true),
+            logging: (level, message) => print(message),
+          )).withAutomaticReconnect().build();
+
+      connection?.onclose((exception) {
+        print("ON CLOSE : $exception\n");
+        initHub();
+      });
+      print("INIT ID : ${connection?.connectionId}\n");
+      connection?.on("ReceiveMessage", (message) {
+        print("Receive ID : ${connection?.connectionId}\n");
+        print("MESSAGE HUB : $message\n");
+        print("OKAY\n");
+        /* print("RETURN TYPE : ${message.runtimeType}\n");
+      print("RETURN TYPE First: ${message?[0].runtimeType}\n");*/
+        /* Map<String, dynamic> map = HashMap.from(message?[0]);
+      print("MAPPPP : $map\n");
+      MessageFullModel model = MessageFullModel.fromHubJson(map);
+      addToCache(model.chatId, map);*/
+      });
+      await connection?.start();
+    }
+  }
+
+  static Future<String> getMyToken()async{
+    if(Preference.prefs.containsKey('sessionToken')){
+      var token = Preference.prefs.getString('sessionToken').toString();
+      return token;
+    }
+    return "Empty";
   }
 
   static ThemeMode getAppTheme() {

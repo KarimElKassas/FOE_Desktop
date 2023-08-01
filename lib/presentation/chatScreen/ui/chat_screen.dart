@@ -20,11 +20,10 @@ import '../../../resources/font_manager.dart';
 
 class ChatScreen extends StatelessWidget {
   ChatScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => sl<HomeCubit>(),
+      create: (context) => sl<HomeCubit>()..initChatHub()..getChatsFromServer(),
       child: BlocConsumer<HomeCubit, HomeStates>(
         listener: (context,state){},
         builder: (context,state){
@@ -178,7 +177,9 @@ class ChatScreen extends StatelessWidget {
                                                 background: Colors.transparent,
                                                 borderStyle: BorderStyle.none,
                                                 suffixIcon: IconButton(onPressed: (){}, icon: Icon(LineIcons.search, color: Theme.of(context).primaryColorDark,)),
-                                                validate: (value){}),
+                                                validate: (value){},
+                                                onChanged: (value){}
+                                            ),
                                           ),
                                         ],
                                       ),

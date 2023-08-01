@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:egypt_future_chat_desktop/resources/endpoints.dart';
 import 'package:egypt_future_chat_desktop/resources/extentions.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
@@ -30,7 +31,7 @@ class LinkDeviceScreen extends StatelessWidget {
             if(detectCount == 0){
               print("DETECTED : \n");
               var connection = HubConnectionBuilder()
-                  .withUrl("http://172.16.1.42:9101/communityhub")
+                  .withUrl(EndPoints.hubUrl)
                   .build();
 
               await connection.start();

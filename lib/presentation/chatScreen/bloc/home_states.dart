@@ -9,6 +9,7 @@ class HomeChangeChatRowBackgroundState extends HomeStates{}
 class HomeChangeCurrentChatState extends HomeStates{}
 class HomeLoadChatState extends HomeStates{}
 class HomeGetChatSuccessState extends HomeStates{}
+class HomeFilterChats extends HomeStates{}
 class HomeGetChatErrorState extends HomeStates{
   final String error;
 

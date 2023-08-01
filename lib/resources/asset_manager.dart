@@ -6,4 +6,7 @@ class ImageAsset{
   static const String chatLogo = "$imagePath/logoIconOnly.svg";
   static const String chatImage = "$imagePath/chat_background.png";
   static const String myImage = "$imagePath/me.jpg";
+  static const String error = "$imagePath/error.png";
+  static const String placeholder = "$imagePath/placeholder.jpg";
+
 }

@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             navigatorKey: navigatorKey,
             debugShowCheckedModeBanner: false,
             onGenerateRoute: RouteGenerator.getRoute,
-            initialRoute: Platform.isWindows ? RoutesManager.startRoute : RoutesManager.linkDeviceRoute,
+            initialRoute: RoutesManager.startRoute, //Platform.isWindows ? RoutesManager.startRoute : RoutesManager.linkDeviceRoute,
             darkTheme: darkTheme,
             theme: theme,
           ),

@@ -27,7 +27,7 @@ void main() async {
   await Hive.initFlutter();
   Constants.currentLocale = await AppConstants.getAppLanguage();
 
-  if(Platform.isWindows){
+  /*if(Platform.isWindows){
     await WindowManager.instance.ensureInitialized();
     Future.delayed(const Duration(milliseconds: 200), () {
       WindowManager.instance.maximize();
@@ -37,7 +37,7 @@ void main() async {
     WindowManager.instance.setMinimumSize(const Size(1024, 800));
     //WindowManager.instance.center(animate: true);
     WindowManager.instance.setTitle(Constants.currentLocale == LanguageType.ARABIC.getValue() ? "جهاز مستقبل مصر" : "Egypt's Future Authority");
-  }
+  }*/
 
   Bloc.observer = MyBlocObserver();
   ServiceLocator().setup();

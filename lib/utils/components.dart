@@ -1,9 +1,12 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:egypt_future_chat_desktop/resources/language_manager.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
+import '../presentation/chatScreen/components/gallery/gallery_item_wrapper_view.dart';
+import '../resources/asset_manager.dart';
 import '../resources/color_manager.dart';
 import '../resources/constants_manager.dart';
 import '../resources/font_manager.dart';
@@ -18,6 +21,7 @@ class ReusableComponents {
       required String hintText,
       required TextInputAction textInputAction,
       required Function(String? value) validate,
+      required Function(String? value) onChanged,
       TextStyle? textStyle,
       Widget? suffixIcon,
       Widget? prefixIcon,
@@ -40,6 +44,7 @@ class ReusableComponents {
       textAlignVertical: TextAlignVertical.center,
       textAlign: Constants.currentLocale == LanguageType.ARABIC.getValue() ? TextAlign.start : TextAlign.end,
       validator: (value) => validate(value),
+      onChanged: (value) => onChanged(value),
       decoration: InputDecoration(
           filled: true,
           fillColor: background ?? ColorManager.white.withOpacity(AppSize.s0_8),
@@ -204,6 +209,64 @@ class ReusableComponents {
       },
     );
   }
+  static Widget cachedImage(
+      {required String url,
+        required BorderRadius borderRadius,
+        BoxFit? fit,
+        double? height, double? width}) {
+    return CachedNetworkImage(
+      imageUrl: url,
+      imageBuilder: (context, imageProvider) => ClipRRect(
+        borderRadius: borderRadius,
+        child: FadeInImage(
+          height: height,
+          width: width,
+          fit: fit??BoxFit.fill,
+          image: imageProvider,
+          placeholder: const AssetImage(ImageAsset.placeholder),
+          imageErrorBuilder: (context, error, stackTrace) {
+            print("ERROR IN IMAGE : $error\n");
+            return Image.asset(
+              ImageAsset.error,
+              fit: BoxFit.fill,
+              height: height,
+              width: width,
+            );
+          },
+        ),
+      ),
+      placeholder: (context, url) => CircularProgressIndicator(
+        color: ColorManager.lightGreen,
+        strokeWidth: AppSize.s0_8,
+      ),
+      errorWidget: (context, url, error) => FadeInImage(
+        height: height,
+        width: width,
+        fit: BoxFit.fill,
+        image: const AssetImage(ImageAsset.error),
+        placeholder: const AssetImage(ImageAsset.placeholder),
+      ),
+    );
+  }
+
+  static void openImageFullScreen(
+      BuildContext context, List<String> imagesList, final int index, {bool? isFile}) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => GalleryImageWrapper(
+          isFile: isFile??false,
+          titleGallery: "",
+          galleryItems: imagesList,
+          backgroundDecoration: BoxDecoration(
+              color: Colors.black, borderRadius: BorderRadius.circular(4)),
+          initialIndex: index,
+          scrollDirection: Axis.horizontal,
+        ),
+      ),
+    );
+  }
+
 }
 
 class BlurryProgressDialog extends StatelessWidget {
